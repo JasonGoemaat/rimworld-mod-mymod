@@ -14,10 +14,10 @@
     </graphicData>
     <drawGUIOverlay>true</drawGUIOverlay>
     <statBases>
-      <MaxHitPoints>100</MaxHitPoints>
-      <Flammability>1.0</Flammability>
-      <DeteriorationRate>2</DeteriorationRate>
-      <Beauty>-3</Beauty>
+      <MaxHitPoints>10000</MaxHitPoints>
+      <Flammability>0.01</Flammability>
+      <DeteriorationRate>0</DeteriorationRate>
+      <Beauty>25</Beauty>
     </statBases>
     <altitudeLayer>Item</altitudeLayer>
     <alwaysHaulable>True</alwaysHaulable>
@@ -48,6 +48,9 @@
       <effectWorking>Smith</effectWorking>
       <soundWorking>Recipe_Machining</soundWorking>
       <recipeUsers>
+        <li>ElectricTailoringBench</li>
+        <li>HandTailoringBench</li>
+        <li>CraftingSpot</li>
         <li>TableMachining</li>
       </recipeUsers>
       <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
@@ -70,11 +73,13 @@
     <techLevel>Spacer</techLevel>
     <recipeMaker>
       <unfinishedThingDef>UnfinishedTechArmor</unfinishedThingDef>
-      <researchPrerequisite>ReconArmor</researchPrerequisite>
       <skillRequirements>
-        <Crafting>6</Crafting>
+        <Crafting>1</Crafting>
       </skillRequirements>
       <recipeUsers Inherit="False">
+        <li>ElectricTailoringBench</li>
+        <li>HandTailoringBench</li>
+        <li>CraftingSpot</li>
         <li>FabricationBench</li>
       </recipeUsers>
     </recipeMaker>
@@ -82,33 +87,36 @@
       <texPath>Things/Pawn/Humanlike/Apparel/ReconArmor/ReconArmor</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
-    <generateCommonality>2</generateCommonality>
+    <generateCommonality>0</generateCommonality>
     <tradeTags>
       <li>HiTechArmor</li>
       <li>Armor</li>
     </tradeTags>
     <statBases>
-      <WorkToMake>45000</WorkToMake>
-      <MaxHitPoints>280</MaxHitPoints>
-      <Mass>9</Mass>
-      <Flammability>0.4</Flammability>
-      <ArmorRating_Sharp>0.92</ArmorRating_Sharp>
-      <ArmorRating_Blunt>0.4</ArmorRating_Blunt>
-      <ArmorRating_Heat>0.46</ArmorRating_Heat>
+      <WorkToMake>4</WorkToMake>
+      <MaxHitPoints>28000</MaxHitPoints>
+      <Mass>1</Mass>
+      <Flammability>0</Flammability>
+      <ArmorRating_Sharp>0.999</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.998</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.997</ArmorRating_Heat>
       <Insulation_Cold>32</Insulation_Cold>
-      <Insulation_Heat>9</Insulation_Heat>
-      <EquipDelay>11</EquipDelay>
+      <Insulation_Heat>32</Insulation_Heat>
+      <EquipDelay>1</EquipDelay>
     </statBases>
     <thingCategories>
       <li>ApparelArmor</li>
     </thingCategories>
-    <costList>
-      <ComponentSpacer>3</ComponentSpacer>
-      <Plasteel>80</Plasteel>
-      <Uranium>10</Uranium>
-    </costList>
+    <!-- <costList>
+      <Steel>80</Steel>
+    </costList> -->
+    <stuffCategories>
+      <li>Woody</li>
+    </stuffCategories>
+    <costStuffCount>5</costStuffCount>
     <apparel>
       <bodyPartGroups>
+        <li>FullHead</li>
         <li>Torso</li>
         <li>Neck</li>
         <li>Shoulders</li>
@@ -129,25 +137,11 @@
       <options>
         <li>
           <weight>10</weight>
-          <only>(0.9,0.9,0.9)</only>
-        </li>
-        <li>
-          <weight>10</weight>
-          <only>(0.33,0.33,0.33)</only>
-        </li>
-        <li>
-          <weight>10</weight>
-          <only>(0.65,0.65,0.65)</only>
-        </li>
-        <li>
-          <weight>6</weight>
-          <min>(0.3,0.3,0.3)</min>
-          <max>(0.5,0.5,0.5)</max>
+          <only>(0.01,0.01,0.99)</only>
         </li>
       </options>
     </colorGenerator>
     <comps>
-      <li Class="CompProperties_Biocodable"/>
     </comps>
     <thingSetMakerTags>
       <li>RewardStandardHighFreq</li>
@@ -158,7 +152,7 @@
   <ThingDef ParentName="ApparelStilsuitBaseB">
     <defName>Apparel_Stilsuit</defName>
     <label>stilsuit</label>
-    <description>A suit of light partially-powered armor, designed to permit quick movement. Lightweight plasteel-weave plates block attacks without compromising mobility, and neuro-memetic assistors in the lower body allow a human to wear the armor and still move easily.\n\nArmor like this is often used by imperial scout troops and glitterworld police forces.</description>
+    <description>Fremen manufacture</description>
     <apparel>
       <tags>
         <li>SpacerMilitary</li>
