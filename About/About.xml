@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <packageId>Goemaat.MyMod</packageId>
+  <author>Jason Goemaat</author>
+  <forceLoadBefore>
+  </forceLoadBefore>
+</ModMetaData>

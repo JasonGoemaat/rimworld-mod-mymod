@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Create tasteThought for eating simple meal -->
+<Defs>
+  <ThoughtDef>
+    <defName>AteSimpleMeal</defName>
+    <durationDays>30</durationDays>
+    <stages>
+      <li>
+        <label>ate simple meal</label>
+        <description>That simple meal hit the spot.</description>
+        <baseMoodEffect>99</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+</Defs>
