@@ -2,6 +2,9 @@
 <ModMetaData>
   <packageId>Goemaat.MyMod</packageId>
   <author>Jason Goemaat</author>
+  <supportedVersions>
+    <li>1.4</li>
+  </supportedVersions>
   <forceLoadBefore>
   </forceLoadBefore>
 </ModMetaData>
