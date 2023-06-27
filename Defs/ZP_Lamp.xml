@@ -2,7 +2,6 @@
   <ThingDef ParentName="LampBase">
     <defName>ZPLamp</defName>
     <label>zero point lamp</label>
-    <thingClass>Building</thingClass>
     <description>A lamp that taps into zero point energy</description>
     <graphicData>
       <texPath>Things/Building/Furniture/LampStanding</texPath>
@@ -16,7 +15,6 @@
       <Flammability>0</Flammability>
       <Beauty>30</Beauty>
     </statBases>
-    <tickerType>Normal</tickerType>
     <designationCategory>Power</designationCategory>
     <uiOrder>2990</uiOrder>
     <comps>
