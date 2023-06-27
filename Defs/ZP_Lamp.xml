@@ -1,8 +1,8 @@
 <Defs>
   <ThingDef ParentName="LampBase">
     <defName>ZPLamp</defName>
-    <label>zero point lamp</label>
-    <description>A lamp that taps into zero point energy and maintains temperature</description>
+    <label>ZP Lamp</label>
+    <description>A lamp that taps into zero point energy and can provide power and heat in addition to light.  It's also quite fetching.</description>
     <thingClass>Building_Heater</thingClass>
     <thingCategories>
       <li>BuildingsTemperature</li>
@@ -18,48 +18,37 @@
       <Mass>1</Mass>
       <MaxHitPoints>400</MaxHitPoints>
       <Flammability>0</Flammability>
-      <Beauty>30</Beauty>
+      <Beauty>99</Beauty>
     </statBases>
     <designationCategory>Power</designationCategory>
     <uiOrder>2990</uiOrder>
     <placeWorkers>
       <li>PlaceWorker_Heater</li>
-      <li>PlaceWorker_CoolerSimple</li>
     </placeWorkers>
     <comps>
       <li Class="CompProperties_Power">
-        <compClass>CompPowerPlant</compClass> <!-- try CompPowerTrader -->
+        <compClass>CompPowerPlant</compClass>
         <basePowerConsumption>-4000</basePowerConsumption>
         <transmitsPower>true</transmitsPower>
       </li>
       <li Class="CompProperties_Styleable" />
       <li Class="CompProperties_Glower">
         <glowRadius>20</glowRadius>
-        <glowColor>(94,214,148,0)</glowColor>
+        <glowColor>(124,250,124,0)</glowColor>
         <colorPickerEnabled>true</colorPickerEnabled>
         <darklightToggle>true</darklightToggle>
       </li>
       <li Class="CompProperties_Flickable" />
       <li Class="CompProperties_TempControl">
-        <energyPerSecond>25</energyPerSecond>
-      </li>
-      <li Class="CompProperties_HeatPusher">
-        <compClass>CompHeatPusherPowered</compClass>
-        <heatPerSecond>-25</heatPerSecond>
-        <heatPushMinTemperature>-10</heatPushMinTemperature>
+        <energyPerSecond>50</energyPerSecond>
       </li>
     </comps>
   </ThingDef>
 
   <ThingDef ParentName="LampBase">
-    <defName>ZPCooler</defName>
-    <label>zero point lamp cooler</label>
-    <description>A lamp that taps into zero point energy</description>
-    <thingClass>Building_Cooler</thingClass>
-    <thingCategories>
-      <li>BuildingsTemperature</li>
-    </thingCategories>
-    <tickerType>Rare</tickerType>
+    <defName>ZPFreezer</defName>
+    <label>ZP Freezer</label>
+    <description>A cooling lamp powered by zero point energy, will try to lower temperature to -10</description>
     <graphicData>
       <texPath>Things/Building/Furniture/LampStanding</texPath>
     </graphicData>
@@ -70,34 +59,62 @@
       <Mass>1</Mass>
       <MaxHitPoints>400</MaxHitPoints>
       <Flammability>0</Flammability>
-      <Beauty>30</Beauty>
+      <Beauty>99</Beauty>
     </statBases>
+    <tickerType>Normal</tickerType>
     <designationCategory>Power</designationCategory>
     <uiOrder>2990</uiOrder>
     <placeWorkers>
-      <li>PlaceWorker_Heater</li>
-      <li>PlaceWorker_Cooler</li>
+      <li>PlaceWorker_CoolerSimple</li>
     </placeWorkers>
+    <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
     <comps>
       <li Class="CompProperties_Power">
-        <compClass>CompPowerPlant</compClass> <!-- try CompPowerTrader -->
-        <basePowerConsumption>-5000</basePowerConsumption>
+        <compClass>CompPowerPlant</compClass>
+        <basePowerConsumption>-4000</basePowerConsumption>
         <transmitsPower>true</transmitsPower>
       </li>
-      <li Class="CompProperties_Styleable" />
       <li Class="CompProperties_Glower">
         <glowRadius>20</glowRadius>
-        <glowColor>(94,214,148,0)</glowColor>
+        <glowColor>(124,124,250,0)</glowColor>
         <colorPickerEnabled>true</colorPickerEnabled>
         <darklightToggle>true</darklightToggle>
       </li>
       <li Class="CompProperties_Flickable" />
-      <li Class="CompProperties_TempControl">
-        <energyPerSecond>50</energyPerSecond>
-      </li>
-      <li Class="CompProperties_TempControl">
-        <energyPerSecond>-50</energyPerSecond>
+      <li Class="CompProperties_HeatPusher">
+        <compClass>CompHeatPusherPowered</compClass>
+        <heatPerSecond>-50</heatPerSecond>
+        <heatPushMinTemperature>-10</heatPushMinTemperature>
       </li>
     </comps>
   </ThingDef>
+<!-- ***** Cooling/Heating Information 
+
+So my heaters and coolers have +/- 50 'energyPerSecond' and 'heatPerSecond' 
+respectively.  I built a huge 50x50 internal dual-plasteel walled area
+with one door.  It took 40-48 heaters to raise the internal temp
+to 81c for testing with an outdoor temperature hovering around 0.
+The area has a roof of course.
+
+Something interesting happened when I created an internally 10x10
+area with one wall inside.   My thought was to have the heaters
+create a base-line temperature and see how my coolers worked because
+heat would seep through the walls.  But without adding any coolers
+the temperature inside started dropping.   I think a lot of the heat
+loss is going through the roof and/or floor then.
+
+When the temperature is -2c outside, the area equalized to 46c.  With
+the outside temperature 10c, it went up to 49c.  At 12c it went up to 52c.
+So it looks like this test will be impossible with changing outdoor
+temperatures.  
+
+I will have to drastically lower the target setting to get a valid test, 
+or go to a desert biome, or create a heat wave somehow...
+
+Other outdoor temps:
+36 -> 61 - 25c heat going through walls, 20c escaping to outside
+
+
+
+-->
 </Defs>
