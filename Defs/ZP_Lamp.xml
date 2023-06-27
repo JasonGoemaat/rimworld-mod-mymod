@@ -2,6 +2,7 @@
   <ThingDef ParentName="LampBase">
     <defName>ZPLamp</defName>
     <label>zero point lamp</label>
+    <thingClass>Building</thingClass>
     <description>A lamp that taps into zero point energy</description>
     <graphicData>
       <texPath>Things/Building/Furniture/LampStanding</texPath>
@@ -11,13 +12,18 @@
     </costList>
     <statBases>
       <Mass>1</Mass>
-      <StyleDominance MayRequire="Ludeon.RimWorld.Ideology">5</StyleDominance>
+      <MaxHitPoints>500</MaxHitPoints>
+      <Flammability>0</Flammability>
+      <Beauty>30</Beauty>
     </statBases>
+    <tickerType>Normal</tickerType>
+    <designationCategory>Power</designationCategory>
     <uiOrder>2990</uiOrder>
     <comps>
       <li Class="CompProperties_Power">
         <compClass>CompPowerPlant</compClass> <!-- try CompPowerTrader -->
         <basePowerConsumption>-5000</basePowerConsumption>
+        <transmitsPower>true</transmitsPower>
       </li>
       <li Class="CompProperties_Styleable" />
       <li Class="CompProperties_Glower">
