@@ -88,6 +88,7 @@
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <generateCommonality>0</generateCommonality>
+    <generateAllowChance>0</generateAllowChance>
     <tradeTags>
       <li>HiTechArmor</li>
       <li>Armor</li>
@@ -107,13 +108,9 @@
     <thingCategories>
       <li>ApparelArmor</li>
     </thingCategories>
-    <!-- <costList>
-      <Steel>80</Steel>
-    </costList> -->
-    <stuffCategories>
-      <li>Woody</li>
-    </stuffCategories>
-    <costStuffCount>5</costStuffCount>
+    <costList>
+      <Steel>1</Steel>
+    </costList>
     <apparel>
       <bodyPartGroups>
         <li>FullHead</li>
@@ -144,7 +141,6 @@
     <comps>
     </comps>
     <thingSetMakerTags>
-      <li>RewardStandardHighFreq</li>
     </thingSetMakerTags>
   </ThingDef>
 

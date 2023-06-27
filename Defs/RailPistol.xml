@@ -29,6 +29,7 @@
     <uiIconScale>1.4</uiIconScale>
     <soundInteract>Interact_Revolver</soundInteract>
     <statBases>
+      <MaxHitPoints>28000</MaxHitPoints>
       <WorkToMake>40</WorkToMake>
       <Mass>0.4</Mass>
       <AccuracyTouch>0.99</AccuracyTouch>
