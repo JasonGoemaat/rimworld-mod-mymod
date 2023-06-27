@@ -3,6 +3,11 @@
     <defName>ZPLamp</defName>
     <label>zero point lamp</label>
     <description>A lamp that taps into zero point energy</description>
+    <thingClass>Building_Heater</thingClass>
+    <thingCategories>
+      <li>BuildingsTemperature</li>
+    </thingCategories>
+    <tickerType>Rare</tickerType>
     <graphicData>
       <texPath>Things/Building/Furniture/LampStanding</texPath>
     </graphicData>
@@ -11,12 +16,15 @@
     </costList>
     <statBases>
       <Mass>1</Mass>
-      <MaxHitPoints>500</MaxHitPoints>
+      <MaxHitPoints>400</MaxHitPoints>
       <Flammability>0</Flammability>
       <Beauty>30</Beauty>
     </statBases>
     <designationCategory>Power</designationCategory>
     <uiOrder>2990</uiOrder>
+    <placeWorkers>
+      <li>PlaceWorker_Heater</li>
+    </placeWorkers>
     <comps>
       <li Class="CompProperties_Power">
         <compClass>CompPowerPlant</compClass> <!-- try CompPowerTrader -->
@@ -29,6 +37,13 @@
         <glowColor>(94,214,148,0)</glowColor>
         <colorPickerEnabled>true</colorPickerEnabled>
         <darklightToggle>true</darklightToggle>
+      </li>
+      <li Class="CompProperties_Flickable" />
+      <li Class="CompProperties_TempControl">
+        <energyPerSecond>50</energyPerSecond>
+      </li>
+      <li Class="CompProperties_TempControl">
+        <energyPerSecond>-50</energyPerSecond>
       </li>
     </comps>
   </ThingDef>
