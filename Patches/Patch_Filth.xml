@@ -10,7 +10,7 @@
   <Operation Class="PatchOperationAdd">
     <xpath>/Defs/ThingDef[@ParentName="BaseFilth"]/filth</xpath>
     <value>
-      <disappearAfterTicks>250</disappearAfterTicks> <!-- 1 tick = 1/60th second, 250 is rare tick -->
+      <disappearsAfterTicks>250</disappearsAfterTicks> <!-- 1 tick = 1/60th second, 250 is rare tick -->
     </value>
   </Operation>
 
