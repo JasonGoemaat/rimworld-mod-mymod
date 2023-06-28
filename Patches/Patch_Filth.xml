@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <!-- Give SimpleMeal a tasteThough -->
+
+  <Operation Class="PatchOperationRemove">
+    <xpath>/Defs/ThingDef[@ParentName="BaseFilth"]/filth/disappearsInDays</xpath>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/ThingDef[@ParentName="BaseFilth"]/filth</xpath>
+    <value>
+      <disappearAfterTicks>250</disappearAfterTicks> <!-- 1 tick = 1/60th second, 250 is rare tick -->
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/ThingDef[@ParentName="BaseFilth"]/filth/canFilthAttach</xpath>
+    <value>
+      <canFilthAttach>false</canFilthAttach>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/ThingDef[@ParentName="BaseFilth"]/statBases/Beauty</xpath>
+    <value>
+      <Beauty>1</Beauty> <!-- filth is cute! -->
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/ThingDef[@ParentName="BaseFilth"]/statBases/Cleanliness</xpath>
+    <value>
+      <Cleanliness>5</Cleanliness> <!-- actually improves cleanliness? -->
+    </value>
+  </Operation>
+</Patch>
