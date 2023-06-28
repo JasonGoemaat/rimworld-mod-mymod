@@ -16,7 +16,7 @@
     </costList>
     <statBases>
       <Mass>1</Mass>
-      <MaxHitPoints>400</MaxHitPoints>
+      <MaxHitPoints>5200</MaxHitPoints>
       <Flammability>0</Flammability>
       <Beauty>99</Beauty>
     </statBases>
@@ -28,7 +28,7 @@
     <comps>
       <li Class="CompProperties_Power">
         <compClass>CompPowerPlant</compClass>
-        <basePowerConsumption>-4000</basePowerConsumption>
+        <basePowerConsumption>-4500</basePowerConsumption>
         <transmitsPower>true</transmitsPower>
       </li>
       <li Class="CompProperties_Styleable" />
@@ -57,7 +57,7 @@
     </costList>
     <statBases>
       <Mass>1</Mass>
-      <MaxHitPoints>400</MaxHitPoints>
+      <MaxHitPoints>5200</MaxHitPoints>
       <Flammability>0</Flammability>
       <Beauty>99</Beauty>
     </statBases>
@@ -71,7 +71,7 @@
     <comps>
       <li Class="CompProperties_Power">
         <compClass>CompPowerPlant</compClass>
-        <basePowerConsumption>-4000</basePowerConsumption>
+        <basePowerConsumption>-4500</basePowerConsumption>
         <transmitsPower>true</transmitsPower>
       </li>
       <li Class="CompProperties_Glower">
