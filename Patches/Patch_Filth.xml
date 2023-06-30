@@ -3,14 +3,30 @@
 
   <!-- Give SimpleMeal a tasteThough -->
 
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/ThingDef[@ParentName="BaseFilth"]/filth/disappearsInDays</xpath>
+    <value>
+      <disappearsInDays>~0.001~0.0011</disappearsInDays> <!-- 1 tick = 1/60th second, 250 is rare tick -->
+    </value>
+  </Operation>
+
   <Operation Class="PatchOperationRemove">
     <xpath>/Defs/ThingDef[@ParentName="BaseFilth"]/filth/disappearsInDays</xpath>
   </Operation>
 
+  <!-- 1 tick = 1/60th second, 250 is rare tick, but this doesn't exist in def, only in type and
+  calculated from disappearsInDays -->
+  <!-- <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/ThingDef[@ParentName="BaseFilth"]/filth</xpath>
+    <value>
+      <disappearAfterTicks>250</disappearAfterTicks>
+    </value>
+  </Operation> -->
+
   <Operation Class="PatchOperationAdd">
     <xpath>/Defs/ThingDef[@ParentName="BaseFilth"]/filth</xpath>
     <value>
-      <disappearsAfterTicks>250</disappearsAfterTicks> <!-- 1 tick = 1/60th second, 250 is rare tick -->
+      <disappearsInDays>0.001~0.0011</disappearsInDays> <!-- 1 tick = 1/60th second, 250 is rare tick -->
     </value>
   </Operation>
 
@@ -32,6 +48,27 @@
     <xpath>/Defs/ThingDef[@ParentName="BaseFilth"]/statBases/Cleanliness</xpath>
     <value>
       <Cleanliness>5</Cleanliness> <!-- actually improves cleanliness? -->
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/ThingDef[@ParentName="BaseFilth"]/graphicData/color</xpath>
+    <value>
+      <color>(99,250,99,0)</color>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationRemove">
+    <xpath>/Defs/ThingDef[@ParentName="BaseFilth"]/filth/ignoreFilthMultiplierStat</xpath>
+  </Operation>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/ThingDef[@Name="BaseFilth"]/statBases</xpath>
+    <value>
+      <statBases>
+        <Beauty>10</Beauty>
+        <Cleanliness>5</Cleanliness>
+      </statBases>
     </value>
   </Operation>
 </Patch>
